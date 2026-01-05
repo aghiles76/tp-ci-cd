@@ -4,13 +4,13 @@ jobs:
 test:
 runs-on: ubuntu-latest
 steps:
-- name: Récupérer le code
+ - name: Récupérer le code
 uses: actions/checkout@v3
-- name: Installer Python
+ - name: Installer Python
 uses: actions/setup-python@v4
 with:
 python-version: 3.x
-- name: Installer les dépendances
+ - name: Installer les dépendances
 run: pip install pytest
-- name: Exécuter les tests
+ - name: Exécuter les tests
 run: python -m unittest test_app.py
