@@ -27,6 +27,10 @@ jobs:
           args: >
             -Dsonar.organization=aghiles76
             -Dsonar.projectKey=aghiles76_tp-ci-cd
+      - name: Analyse des dépendances avec Snyk
+        uses: snyk/actions/python@main
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
   deploy:
     needs: test
     runs-on: ubuntu-latest
